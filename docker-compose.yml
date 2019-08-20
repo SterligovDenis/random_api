@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  php:
+    image: steden/php:7.3-fpm-composer
+    container_name: gv-php
+    volumes:
+      - ./:/var/www/html/
+      - .docker/php-ini:/usr/local/etc/php/custom.d
+    environment:
+      PHP_INI_SCAN_DIR: "/usr/local/etc/php/custom.d:/usr/local/etc/php/conf.d"
+  webserver:
+    image: nginx:1.16
+    container_name: gv-nginx
+    ports:
+      - 127.0.0.1:8080:80
+    volumes:
+      - ./:/var/www/html/
+      - .docker/nginx/log:/var/www/log
+      - .docker/nginx/site.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+  db:
+    image: mysql:5.7
+    container_name: gv-mysql
+    environment:
+      MYSQL_DATABASE: 'gen_values_db'
+      MYSQL_USER: 'generatorman'
+      MYSQL_PASSWORD: '12345'
+      MYSQL_ROOT_PASSWORD: 'qwerty'
+    ports:
+      - 3306:3306
+
