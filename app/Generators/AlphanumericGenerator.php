@@ -4,7 +4,7 @@
 namespace App\Generators;
 
 
-class AlphanumericGenerator implements IGenerator
+class AlphanumericGenerator implements GeneratorInterface
 {
     /**
      * @var array

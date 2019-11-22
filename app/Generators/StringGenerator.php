@@ -4,7 +4,7 @@
 namespace App\Generators;
 
 
-class StringGenerator implements IGenerator
+class StringGenerator implements GeneratorInterface
 {
     /**
      * @var integer

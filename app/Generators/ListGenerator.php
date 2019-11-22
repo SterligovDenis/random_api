@@ -4,7 +4,7 @@
 namespace App\Generators;
 
 
-class ListGenerator implements IGenerator
+class ListGenerator implements GeneratorInterface
 {
     /**
      * @var

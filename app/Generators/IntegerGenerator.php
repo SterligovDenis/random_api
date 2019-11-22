@@ -4,7 +4,7 @@
 namespace App\Generators;
 
 
-class IntegerGenerator implements IGenerator
+class IntegerGenerator implements GeneratorInterface
 {
     const MAX_LENGTH = 19;
 

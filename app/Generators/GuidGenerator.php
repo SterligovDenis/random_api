@@ -4,7 +4,7 @@
 namespace App\Generators;
 
 
-class GuidGenerator implements IGenerator
+class GuidGenerator implements GeneratorInterface
 {
     /**
      * @return string

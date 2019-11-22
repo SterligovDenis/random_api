@@ -4,7 +4,7 @@
 namespace App\Generators;
 
 
-interface IGenerator
+interface GeneratorInterface
 {
      public function generate();
 }
